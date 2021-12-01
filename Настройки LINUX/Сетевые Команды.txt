@@ -1,0 +1,84 @@
+gns3@box:~$ sudo su
+gns3@box:~$ifconfig eth0 192.168.1.11 netmask 255.255.255.0 up
+gns3@box:~$route add default gw 192.168.1.1 eth0
+
+route -n  посмотреть таблицу маршрутизации
+$ sudo lshw -C network
+
+Она позволяет посмотреть подключенные сетевые устройства.
+
+Пример вывода команды:
+
+ubuntu@ubuntu:~$ sudo lshw -C network
+
+
+
+Настройка проводной сети
+Настройка IP-адреса, шлюза по умолчанию, маски подсети
+
+Отредактируйте файл конфигурации /etc/network/interfaces, например так:
+
+$ sudo nano /etc/network/interfaces 
+
+И допишите в него:
+Для статического IP:
+
+iface eth0 inet static 
+address 192.168.0.1 
+netmask 255.255.255.0 
+gateway 192.168.0.254
+dns-nameservers 192.168.0.254 8.8.8.8
+auto eth0 ### auto eth0 - указывет системе что интерфейс eth0 необходимо включать автоматически при загрузке системы с вышеуказанными параметрами.
+
+
+
+root@NetworkAutomation-1:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gns3vm          0.0.0.0         UG    209    0        0 eth0
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 eth0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Пример конфигурации для динамического IP:
+
+iface eth0 inet dhcp
+auto eth0 
+
+Временная настройка IP-адреса и маски подсети
+
+При необходимости задать пробные настройки, выполните:
+
+$ sudo ip addr add 192.168.0.1/24 dev eth0
+
+Где 192.168.0.1 - наш IP-адрес, /24 - число бит в префиксной части адреса (соответствует маске подсети 255.255.255.0).
+eth0 - подключаемый сетевой интерфейс.
+
+Данные настройки пропадут после перезагрузки системы и не повлияют на файл /etc/network/interfaces
+
+
+
+Как пробросить порт?
+
+Например, нужно пробросить порт 8081. Адрес, на который обращается клиент, назовём внешний_ip, а адрес, на который он должен попасть — внутренний_ip.
+
+iptables -t nat -A PREROUTING -p tcp -d внешний_ір --dport 8081 -j DNAT --to-destination внутренний_ір:8081
+iptables -t nat -A POSTROUTING -p tcp --dst внутренний_ір --dport 8081 -j SNAT --to-source внешний_ір
+
+И обязательно нужно что-то вроде
+
+iptables -t filter -A FORWARD -m conntrack --ctstate DNAT -j ACCEPT
+
+
+

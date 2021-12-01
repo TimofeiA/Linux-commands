@@ -1,0 +1,183 @@
+ls - list
+chsh -- сменить CLI                        јналог ipconfig /release:
+                                             sudo dhclient -r
+                                           јналог ipconfig /renew:
+                                             sudo dhclient
+                                          ƒл€ конкретного подключени€, например Wi-Fi:
+                                                   sudo dhclient -r eth0
+                                                   sudo dhclient eth0
+
+sysadmin@localhost:~$ set | less
+
+sysadmin@localhost:~$ ls -alr --- all long reverse
+sysadmin@localhost:~$ apt-cache search gcc | grep source
+sysadmin@localhost:~$ alias mycal="cal 2021" --- назначить alias
+sysadmin@localhost:~$ alias  ---- посмотреть какие назначены
+sysadmin@localhost:~$ unalias mycal ----убрать
+
+sysadmin@localhost:~/Documents$ touch Newfile
+sysadmin@localhost:~$ cp /etc/ssh/ssh_host_rsa_key.pub /home/sysadmin/Documents ----скопировать(cp copy)
+sysadmin@localhost:~$ echo 'hello world!!'
+sysadmin@localhost:~/Documents$ ls -l   long display
+sysadmin@localhost:~$ ls -rw 40 ------ w 40 ширина
+sysadmin@localhost:~/Documents$ ls -l -r    reverse order
+sysadmin@localhost:~/Documents$ ls --all -- все файлы, включа€ скрытые
+sysadmin@localhost:~$ touch -- --badname
+sysadmin@localhost:~$ rm -- --badname
+
+sysadmin@localhost:~$ uname -a
+Linux localhost 4.4.0-72-generic #93~14.04.1-Ubuntu SMP Fri Mar 31 15:05:15 UTC 
+
+sysadmin@localhost:~/Documents$ pwd   print working directory                                           
+/home/sysadmin/Documents 
+sysadmin@localhost:~/Documents$ type pwd                                        
+pwd is a shell builtin
+
+sysadmin@localhost:~$ which ls                                                  
+/bin/ls
+
+sysadmin@localhost:~$ man cal  ---- man значит manual
+sysadmin@localhost:~$ man passwd --комманда  sysadmin@localhost:~$ man 5 passwd -- секци€ 5 (file)
+sysadmin@localhost:~$ man -k password -поиск по слову(keyword)
+
+sysadmin@localhost:~$ man -f passwd (whatis passwd)
+passwd (1ssl)        - compute password hashes
+passwd (1)           - change user password
+passwd (5)           - the password file
+
+sysadmin@localhost:~$ ls -w 40 -I "T*"  -I значит ignore "T*" --- все папки начинающиес€ на T
+
+sysadmin@localhost:~$ touch -d "1970-01-01 12:00:00" -- --badname            
+sysadmin@localhost:~$ ls --full-time -- --badname           
+-rw-rw-r-- 1 sysadmin sysadmin 0 1970-01-01 12:00:00.000000000 +0000 --badname
+sysadmin@localhost:~$ rm -- --badname 
+----------------------------------------------------------------------------------------------word
+
+sysadmin@localhost:~$ cp /etc/hosts myhosts скопировать файл hosts в новый файл myhosts в текущей директории
+
+Valid Variable Assignments: a=1   _1=a  LONG_VARIABLE='OK'   Name='Jose Romero'
+
+sysadmin@localhost:~$ name='Tim'                                                
+sysadmin@localhost:~$ echo $name
+in the example below, an environment variable is created with the export command:
+sysadmin@localhost:~$ export JOB=engineer
+sysadmin@localhost:~$ unset example --- удалить переменную example
+
+sysadmin@localhost:~$ bash --- открыть новый CLI
+sysadmin@localhost:~$ declare -x EDUCATION=masters ---- тоже что и export, сделать глобальную переменную
+
+Third, the declare or typeset command can be used with the export -x option to declare a variable to be an environment variable.
+These commands are synonymous and work the same way:
+
+
+The env command is used to run commands in a modified environment. It can also be used to temporarily create
+or change environment variables that are only passed to a single command execution by using the following syntax:
+
+env [NAME=VALUE] [COMMAND]
+
+For example, servers are often set to Coordinated Universal Time (UTC), 
+which is good for maintaining consistent time on servers across the planet, but can be frustrating for practical use
+to simply tell the time:
+
+sysadmin@localhost:~$ env TZ=EST date                                 	 
+Sun Mar 10 17:48:16 EST 2020
+The TZ variable is set only in the environment of the current shell, and only for the duration of the command. 
+The rest of the system will not be affected by this variable. 
+In fact, running the date command again will verify that the TZ variable has reverted to UTC.
+
+sysadmin@localhost:~$ set | tail --- просмотреть переменные
+sysadmin@localhost:~$ env | tail
+
+sysadmin@localhost:~$ echo 'echo Hello World!' > my.sh
+sysadmin@localhost:~$ chmod u+x my.sh
+
+Using a relative path to execute a file in the current directory requires the use of the . character, 
+which symbolizes the current directory:
+sysadmin@localhost:~$ ./my.sh
+
+It is possible to add a new directory to the PATH variable without overwriting its previous contents. 
+Import the current value of the $PATH variable into the newly defined PATH variable by using it on both sides of the assignment statement:
+sysadmin@localhost:~$ PATH=$PATH
+Finish it with the value of the additional home directory path:
+sysadmin@localhost:~$ PATH=$PATH:/home/sysadmin
+
+The global configuration files are located in the /etc directory. Local configuration files are stored in the user's home directory.
+File names preceded by a period . character indicate hidden files.
+
+
+Note
+
+The grep command is very useful for filtering the output of commands that produce copious output. 
+For example, to view all of the commands in your history that contain the ls command, 
+search for the ls pattern using the following command:
+
+sysadmin@localhost:~$ history | grep "ls"                      
+    1  ls                                                           
+    4  ls -l                                                        
+    6  ls                                                           
+    9  history | grep "ls"
+
+
+The history command has numerous options; the most common of these options are listed below:
+?????
+Option 	Purpose
+-c 	Clear the list
+-r 	Read the history file and replace the current history
+-w 	Write the current history list to the history file
+
+
+When you close the shell program, it takes commands in the history list and stores them in the ~/.bash_history file, 
+also called the history file. By default, five hundred commands will be stored in the history file. 
+The HISTFILESIZE variable will determine how many commands to write to this file.
+
+# 	ВСЕ ЭТИ ПЕРЕМЕННЫЕ ХРАНЯТСЯ В ФАЙЛЕ .bashrc
+
+If a user wants to store the history commands in a file that is different from ~/.bash_history, 
+then the user can specify an absolute path to the different file as the value for the HISTFILE local variable:
+
+HISTFILE=/path/to/file
+
+The HISTSIZE variable will determine how many commands to keep in memory for each Bash shell
+
+
+
+To have commands not included in the history list, 
+include an assignment like the following in the ~/.bash_profile file:
+
+HISTIGNORE='ls*:cd*:history*:exit'
+
+Note
+
+The * character is used to indicate anything else after the command.
+ So, ls* would match any ls command, such as ls -l or ls etc.
+
+Globbing will be covered in greater detail later in the course.
+
+
+
+History Command 	Meaning
+!! 	Repeat the last command
+!-4 	Execute the command that was run four commands ago
+!555 	Execute command number 555
+!ec 	Execute the last command that started with ec
+!?joe 	Execute the last command that contained joe
+
+
+
+
+In this step, you will set the PATH variable to include a directory where a command would be located. 
+Make a directory and then add it to the PATH variable by executing the following commands:
+
+mkdir mybin
+PATH=$PATH:/home/sysadmin/mybin
+
+
+If you wanted to add more to the PATH variable, you could either edit the .bashrc file directly with a text editor 
+(such as vi, nano, or others covered in a later chapter) or execute the following commands:
+
+echo 'PATH=$PATH:/home/sysadmin/mybin' >> .bashrc 
+tail .bashrc
+
+
+In the example above, the >> characters are used to redirect the output of the echo command and append it to the bottom of the .bashrc file.
+The tail command displays the last ten lines of the .bashrc file so you can verify the file was successfully edited.

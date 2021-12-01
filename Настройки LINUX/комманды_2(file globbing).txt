@@ -1,0 +1,94 @@
+sysadmin@localhost:~$ ascii  вывод таблицы ascii
+
+sysadmin@localhost:~$ man 7 glob      справка по глоббингу
+From that manual page:
+A string is a wildcard pattern if it contains one of the characters 
+'?', '*', or '['. Globbing is the operation that expands a wildcard pattern into the list of path names matching the pattern.
+
+The asterisk* wildcard can be used to match any string, including the empty string.
+sysadmin@localhost:~$ echo *                                                    
+Desktop Documents Downloads Music Pictures Public Templates Videos 
+
+In order to limit the * wildcard, so that it matches fewer file names, it can be combined with other characters. 
+For example, the D* pattern will only match file names that start with a D character:
+sysadmin@localhost:~$ echo D*
+Desktop Documents Downloads
+
+The * character can appear anywhere in the pattern; it can even appear multiple times. 
+It is possible to find a file that not only starts with a D, but also contains the letter n, by using the D*n* pattern:
+
+sysadmin@localhost:~$ echo D*n*
+Documents Downloads
+
+The question mark ? character in a string will match exactly one character. For example, to see all of the files in the /usr/bin directory that only have one character in the file name, use the /usr/bin/? pattern:
+
+sysadmin@localhost:~$ cd /usr/bin
+sysadmin@localhost:/usr/bin$ echo /usr/bin/? 
+/usr/bin/[ /usr/bin/w
+
+By adding more question mark ? characters, it is possible to match additional characters. In order to see which files had two or three characters as their file names, execute the following two echo commands:
+
+sysadmin@localhost:/usr/bin$ echo ??
+‌⁠​​⁠​ du ex hd id nl od pg pr sg tr ul vi wc xz
+sysadmin@localhost:/usr/bin$ echo ???
+a2p apt awk cal cmp col cut dig env eqn fmt gpg lcf ldd man pdb pic ptx rcp rev
+rsh s2p scp see seq ssh sum tac tbl tee tic toe top tty ucf who xxd yes zip
+
+While the w??* pattern will match files that started with the letter w, but are at least three characters long:
+
+sysadmin@localhost:/usr/bin$ echo w??*
+w.procps wall watch wget whatis whereis which who whoami write
+
+For example, using a pattern like [abcd]?? will match file names that start with an a, b, c, or d character and that are three characters long. Alternatively, letters that are consecutive can also be expressed as a range like the [a-d]?? pattern:
+
+sysadmin@localhost:/usr/bin$ echo [a-d]??
+a2p apt awk cal cmp col cut dig
+
+Just as with the other wildcard characters, the square brackets can appear multiple times in a pattern. 
+For example, to match a file in the /usr/bin directory that contains at least two digits in the file name, use the /etc/*[0-9][0-9]* pattern:
+
+sysadmin@localhost:~/Documents$ cd /usr/bin
+sysadmin@localhost:/usr/bin$ echo *[0-9][0-9]*
+base64 i386 linux32 linux64 perl5.18.2 pstree.x11 sha224sum sha256sum sha384sum sha512sum x86_64
+
+The square brackets also support negating the set of characters (also called complementation). 
+If the first character inside of the square brackets is either an exclamation ! character or a caret ^ character, 
+then that first character has a special meaning of not the following characters, 
+meaning match a single character that is not within the set of characters that follows it.
+
+In other words, the [!a-v]* pattern would match a file name that does not begin with a letter a through v:
+
+sysadmin@localhost:/usr/bin$ echo [!a-v]*
+2to3 2to3-2.7 2to3-3.4 [ w w.procps wall watch wc wget whatis whereis which who
+whoami write x86_64 xargs xauth xgettext xsubpp xxd xz xzcat xzcmp xzdiff xzegrep xzfgrep xzgrep
+
+sysadmin@localhost:~$ echo [PMT]*                                               
+Music Pictures Public Templates 
+
+sysadmin@localhost:~$ echo /usr/bin/p*t*[2-6]                                   
+/usr/bin/pygettext3 /usr/bin/pygettext3.6 /usr/bin/python3 /usr/bin/python3.6
+
+if the first character inside of the square brackets is either an exclamation ! character or a caret ^ character, 
+then that first character has a special meaning of not the following characters.
+
+To view the file names that begin with rc in the /etc directory, excluding those containing the numbers 3-6, execute the following command:
+
+echo /etc/rc[^3-6]*
+
+sysadmin@localhost:~$ echo /etc/rc[^3-6]*                          
+/etc/rc0.d /etc/rc1.d /etc/rc2.d /etc/rcS.d
+
+Alternatively, you can use the exclamation point ! character to match the pattern from the previous step:
+
+echo /etc/rc[!3-6]*
+
+sysadmin@localhost:~$ echo /etc/rc[!3-6]*                          
+/etc/rc0.d /etc/rc1.d /etc/rc2.d /etc/rcS.d
+
+
+To view all files with names beginning with rc in the /etc directory except for those that include the number 1, execute the following command:
+
+echo /etc/rc[!1]*
+
+sysadmin@localhost:~$ echo /etc/rc[!1]*                             
+/etc/rc0.d /etc/rc2.d /etc/rc3.d /etc/rc4.d /etc/rc5.d /etc/rc6.d /etc/rcS.d
