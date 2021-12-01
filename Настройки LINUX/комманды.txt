@@ -1,9 +1,9 @@
 ls - list
-chsh -- ñìåíèòü CLI                        Àíàëîã ipconfig /release:
+chsh -- Ã±Ã¬Ã¥Ã­Ã¨Ã²Ã¼ CLI                        Ã€Ã­Ã Ã«Ã®Ã£ ipconfig /release:
                                              sudo dhclient -r
-                                           Àíàëîã ipconfig /renew:
+                                           Ã€Ã­Ã Ã«Ã®Ã£ ipconfig /renew:
                                              sudo dhclient
-                                          Äëÿ êîíêðåòíîãî ïîäêëþ÷åíèÿ, íàïðèìåð Wi-Fi:
+                                          Ã„Ã«Ã¿ ÃªÃ®Ã­ÃªÃ°Ã¥Ã²Ã­Ã®Ã£Ã® Ã¯Ã®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿, Ã­Ã Ã¯Ã°Ã¨Ã¬Ã¥Ã° Wi-Fi:
                                                    sudo dhclient -r eth0
                                                    sudo dhclient eth0
 
@@ -11,17 +11,17 @@ sysadmin@localhost:~$ set | less
 
 sysadmin@localhost:~$ ls -alr --- all long reverse
 sysadmin@localhost:~$ apt-cache search gcc | grep source
-sysadmin@localhost:~$ alias mycal="cal 2021" --- íàçíà÷èòü alias
-sysadmin@localhost:~$ alias  ---- ïîñìîòðåòü êàêèå íàçíà÷åíû
-sysadmin@localhost:~$ unalias mycal ----óáðàòü
+sysadmin@localhost:~$ alias mycal="cal 2021" --- Ã­Ã Ã§Ã­Ã Ã·Ã¨Ã²Ã¼ alias
+sysadmin@localhost:~$ alias  ---- Ã¯Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ ÃªÃ ÃªÃ¨Ã¥ Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã»
+sysadmin@localhost:~$ unalias mycal ----Ã³Ã¡Ã°Ã Ã²Ã¼
 
 sysadmin@localhost:~/Documents$ touch Newfile
-sysadmin@localhost:~$ cp /etc/ssh/ssh_host_rsa_key.pub /home/sysadmin/Documents ----ñêîïèðîâàòü(cp copy)
+sysadmin@localhost:~$ cp /etc/ssh/ssh_host_rsa_key.pub /home/sysadmin/Documents ----Ã±ÃªÃ®Ã¯Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼(cp copy)
 sysadmin@localhost:~$ echo 'hello world!!'
 sysadmin@localhost:~/Documents$ ls -l   long display
-sysadmin@localhost:~$ ls -rw 40 ------ w 40 øèðèíà
+sysadmin@localhost:~$ ls -rw 40 ------ w 40 Ã¸Ã¨Ã°Ã¨Ã­Ã 
 sysadmin@localhost:~/Documents$ ls -l -r    reverse order
-sysadmin@localhost:~/Documents$ ls --all -- âñå ôàéëû, âêëþ÷àÿ ñêðûòûå
+sysadmin@localhost:~/Documents$ ls --all -- Ã¢Ã±Ã¥ Ã´Ã Ã©Ã«Ã», Ã¢ÃªÃ«Ã¾Ã·Ã Ã¿ Ã±ÃªÃ°Ã»Ã²Ã»Ã¥
 sysadmin@localhost:~$ touch -- --badname
 sysadmin@localhost:~$ rm -- --badname
 
@@ -36,16 +36,16 @@ pwd is a shell builtin
 sysadmin@localhost:~$ which ls                                                  
 /bin/ls
 
-sysadmin@localhost:~$ man cal  ---- man çíà÷èò manual
-sysadmin@localhost:~$ man passwd --êîììàíäà  sysadmin@localhost:~$ man 5 passwd -- ñåêöèÿ 5 (file)
-sysadmin@localhost:~$ man -k password -ïîèñê ïî ñëîâó(keyword)
+sysadmin@localhost:~$ man cal  ---- man Ã§Ã­Ã Ã·Ã¨Ã² manual
+sysadmin@localhost:~$ man passwd --ÃªÃ®Ã¬Ã¬Ã Ã­Ã¤Ã   sysadmin@localhost:~$ man 5 passwd -- Ã±Ã¥ÃªÃ¶Ã¨Ã¿ 5 (file)
+sysadmin@localhost:~$ man -k password -Ã¯Ã®Ã¨Ã±Ãª Ã¯Ã® Ã±Ã«Ã®Ã¢Ã³(keyword)
 
 sysadmin@localhost:~$ man -f passwd (whatis passwd)
 passwd (1ssl)        - compute password hashes
 passwd (1)           - change user password
 passwd (5)           - the password file
 
-sysadmin@localhost:~$ ls -w 40 -I "T*"  -I çíà÷èò ignore "T*" --- âñå ïàïêè íà÷èíàþùèåñÿ íà T
+sysadmin@localhost:~$ ls -w 40 -I "T*"  -I Ã§Ã­Ã Ã·Ã¨Ã² ignore "T*" --- Ã¢Ã±Ã¥ Ã¯Ã Ã¯ÃªÃ¨ Ã­Ã Ã·Ã¨Ã­Ã Ã¾Ã¹Ã¨Ã¥Ã±Ã¿ Ã­Ã  T
 
 sysadmin@localhost:~$ touch -d "1970-01-01 12:00:00" -- --badname            
 sysadmin@localhost:~$ ls --full-time -- --badname           
@@ -53,7 +53,7 @@ sysadmin@localhost:~$ ls --full-time -- --badname
 sysadmin@localhost:~$ rm -- --badname 
 ----------------------------------------------------------------------------------------------word
 
-sysadmin@localhost:~$ cp /etc/hosts myhosts ñêîïèðîâàòü ôàéë hosts â íîâûé ôàéë myhosts â òåêóùåé äèðåêòîðèè
+sysadmin@localhost:~$ cp /etc/hosts myhosts Ã±ÃªÃ®Ã¯Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ Ã´Ã Ã©Ã« hosts Ã¢ Ã­Ã®Ã¢Ã»Ã© Ã´Ã Ã©Ã« myhosts Ã¢ Ã²Ã¥ÃªÃ³Ã¹Ã¥Ã© Ã¤Ã¨Ã°Ã¥ÃªÃ²Ã®Ã°Ã¨Ã¨
 
 Valid Variable Assignments: a=1   _1=a  LONG_VARIABLE='OK'   Name='Jose Romero'
 
@@ -61,10 +61,10 @@ sysadmin@localhost:~$ name='Tim'
 sysadmin@localhost:~$ echo $name
 in the example below, an environment variable is created with the export command:
 sysadmin@localhost:~$ export JOB=engineer
-sysadmin@localhost:~$ unset example --- óäàëèòü ïåðåìåííóþ example
+sysadmin@localhost:~$ unset example --- Ã³Ã¤Ã Ã«Ã¨Ã²Ã¼ Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã³Ã¾ example
 
-sysadmin@localhost:~$ bash --- îòêðûòü íîâûé CLI
-sysadmin@localhost:~$ declare -x EDUCATION=masters ---- òîæå ÷òî è export, ñäåëàòü ãëîáàëüíóþ ïåðåìåííóþ
+sysadmin@localhost:~$ bash --- Ã®Ã²ÃªÃ°Ã»Ã²Ã¼ Ã­Ã®Ã¢Ã»Ã© CLI
+sysadmin@localhost:~$ declare -x EDUCATION=masters ---- Ã²Ã®Ã¦Ã¥ Ã·Ã²Ã® Ã¨ export, Ã±Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã£Ã«Ã®Ã¡Ã Ã«Ã¼Ã­Ã³Ã¾ Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã³Ã¾
 
 Third, the declare or typeset command can be used with the export -x option to declare a variable to be an environment variable.
 These commands are synonymous and work the same way:
@@ -85,7 +85,7 @@ The TZ variable is set only in the environment of the current shell, and only fo
 The rest of the system will not be affected by this variable. 
 In fact, running the date command again will verify that the TZ variable has reverted to UTC.
 
-sysadmin@localhost:~$ set | tail --- ïðîñìîòðåòü ïåðåìåííûå
+sysadmin@localhost:~$ set | tail --- Ã¯Ã°Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã»Ã¥
 sysadmin@localhost:~$ env | tail
 
 sysadmin@localhost:~$ echo 'echo Hello World!' > my.sh
@@ -130,7 +130,7 @@ When you close the shell program, it takes commands in the history list and stor
 also called the history file. By default, five hundred commands will be stored in the history file. 
 The HISTFILESIZE variable will determine how many commands to write to this file.
 
-# 	‚‘… ’ˆ ……Œ…›… •€Ÿ’‘Ÿ ‚ ”€‰‹… .bashrc
+# 	â€šâ€˜â€¦ Ââ€™Ë† Ââ€¦Ââ€¦Å’â€¦ÂÂâ€ºâ€¦ â€¢Ââ‚¬ÂÅ¸â€™â€˜Å¸ â€š â€â‚¬â€°â€¹â€¦ .bashrc
 
 If a user wants to store the history commands in a file that is different from ~/.bash_history, 
 then the user can specify an absolute path to the different file as the value for the HISTFILE local variable:
@@ -181,3 +181,4 @@ tail .bashrc
 
 In the example above, the >> characters are used to redirect the output of the echo command and append it to the bottom of the .bashrc file.
 The tail command displays the last ten lines of the .bashrc file so you can verify the file was successfully edited.
+
