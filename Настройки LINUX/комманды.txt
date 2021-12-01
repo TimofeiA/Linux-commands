@@ -181,4 +181,5 @@ tail .bashrc
 
 In the example above, the >> characters are used to redirect the output of the echo command and append it to the bottom of the .bashrc file.
 The tail command displays the last ten lines of the .bashrc file so you can verify the file was successfully edited.
+------------------------------------------------------------------------------------------------------------------------
 
