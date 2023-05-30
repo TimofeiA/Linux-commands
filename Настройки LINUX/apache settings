@@ -1,0 +1,2 @@
+sudo service httpd start
+checkconfig on --- after reboot auto load server
