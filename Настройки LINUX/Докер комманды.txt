@@ -1,3 +1,6 @@
+правильно будет одним блоком команд с подчисткой временных файлов:
+RUN yum -y update && yum -y install httpd php && yum clean all
+
 
 
 Install Docker on Ubuntu 18.04
