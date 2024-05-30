@@ -8,6 +8,8 @@ chsh -- сменить CLI                        Аналог ipconfig /release
                                                    sudo dhclient eth0
 
 sysadmin@localhost:~$ set | less
+smartctl -a /dev/sda1 --- info about device
+iostat  info about read and write on disk in real time
 
 sysadmin@localhost:~$ ls -alr --- all long reverse
 sysadmin@localhost:~$ apt-cache search gcc | grep source
