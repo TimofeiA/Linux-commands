@@ -1,2 +1,3 @@
 git init
 git status
+git add .     git add file1.txt
