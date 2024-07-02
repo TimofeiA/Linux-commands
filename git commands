@@ -3,3 +3,5 @@ git status
 git add .     git add file1.txt
 git commit -m "Initial commit"
 git log
+git log -2  -------------show only 2 last commits(git log -1 show only last commit)----------------
+
