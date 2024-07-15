@@ -1,0 +1,14 @@
+# from bandit exercise server   # https://overthewire.org/wargames/bandit/bandit6.html
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable
+1033 bytes in size
+not executable
+
+bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable -exec file '{}' \; | grep ASCII
+
+The most likely candidate would be find.
+We use -size 1033 to look for the file-size requirement.
+We use -type f to only look at files.
+We use -exec file '{}' \;, to execute the file command and get the file data type.
+After that, we simply need to filter the output for the file type ‘ASCII’ again. 2
