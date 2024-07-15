@@ -12,3 +12,5 @@ We use -size 1033 to look for the file-size requirement.
 We use -type f to only look at files.
 We use -exec file '{}' \;, to execute the file command and get the file data type.
 After that, we simply need to filter the output for the file type ‘ASCII’ again. 2
+
+find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
