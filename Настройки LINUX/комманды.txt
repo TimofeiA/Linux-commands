@@ -1,3 +1,4 @@
+touch dir/file{1..10}
 ls - list
 chsh -- сменить CLI                        Аналог ipconfig /release:
                                              sudo dhclient -r
