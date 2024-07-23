@@ -1,4 +1,10 @@
 touch dir/file{1..10}
+***getfacl file8 показывает текущие права на файл.
+setfacl -m u:user4:r-- file8
+Команда говорит, что нужно модифицировать(-m) права для пользователя user4 и выставить их такими-то. 
+Давайте ещё позволим группе wheel иметь полный доступ на файл:
+setfacl -m g:wheel:rwx file8***
+
 ls - list
 chsh -- сменить CLI                        Аналог ipconfig /release:
                                              sudo dhclient -r
