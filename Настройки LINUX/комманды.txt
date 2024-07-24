@@ -1,5 +1,6 @@
 touch dir/file{1..10}
 sudo cat /var/log/secure  чекнуть логи юзеров
+ssh -i labsuser.pem ec2-user@<public-ip>
 ***getfacl file8 показывает текущие права на файл.
 setfacl -m u:user4:r-- file8
 Команда говорит, что нужно модифицировать(-m) права для пользователя user4 и выставить их такими-то. 
