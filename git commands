@@ -15,4 +15,5 @@ git log --oneline
 git shortlog
 git log -p -1    extended log for last commit
 git clone
-
+git branch two
+git checkout two
