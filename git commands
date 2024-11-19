@@ -15,6 +15,7 @@ git log --oneline
 git shortlog
 git log -p -1    extended log for last commit
 git checkout file1.txt       ---return to a previous state of the file---
+git diff                     ---show the difference between states---
 git clone
 git branch two
 git checkout two
