@@ -14,6 +14,7 @@ git log -2  -------------show only 2 last commits(git log -1 show only last comm
 git log --oneline
 git shortlog
 git log -p -1    extended log for last commit
+git checkout file1.txt       ---return to a previous state of the file---
 git clone
 git branch two
 git checkout two
