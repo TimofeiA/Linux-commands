@@ -1,4 +1,4 @@
-правильно будет одним блоком команд с подчисткой временных файлов:
+we're using obe block of commands with temporary files delition, this is the right way:
 RUN yum -y update && yum -y install httpd php && yum clean all
 
 
@@ -77,3 +77,13 @@ Kill and Delete Containers and Images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 docker rm -f $(docker ps -aq)        # Delete all Containers
 docker rmi -f $(docker images -q)    # Delete all Images
+
+
+
+
+---------------Troubleshooting-------------------
+docker ps -q | wc -l                           ----check the number of running containers
+docker images -q | sort -u | wc -l             ----How many unique images are available on this host.
+docker run --name my-redis -d redis            ----To run a container using the Redis image, --name allows to assign custom name
+docker ps -a -q | wc -l                        ----To determine how many Docker containers (running, stopped, or exited) are present on your host
+docker inspect -f '{{.Config.Image}}' nginx-1  ----
