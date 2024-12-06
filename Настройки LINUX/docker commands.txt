@@ -81,9 +81,22 @@ docker rmi -f $(docker images -q)    # Delete all Images
 
 
 
----------------Troubleshooting-------------------
-docker ps -q | wc -l                           ----check the number of running containers
-docker images -q | sort -u | wc -l             ----How many unique images are available on this host.
-docker run --name my-redis -d redis            ----To run a container using the Redis image, --name allows to assign custom name
-docker ps -a -q | wc -l                        ----To determine how many Docker containers (running, stopped, or exited) are present on your host
-docker inspect -f '{{.Config.Image}}' nginx-1  ----
+                                    ---------------Troubleshooting-------------------
+docker ps -q | wc -l                                             ----check the number of running containers
+docker images -q | sort -u | wc -l                               ----How many unique images are available on this host.
+docker run --name my-redis -d redis                              ----To run a container using the Redis image, --name allows to assign custom name
+docker ps -a -q | wc -l                                          ----To determine how many Docker containers (running, stopped, or exited) are present on your host
+docker inspect -f '{{.Config.Image}}' nginx-1                    ----To identify the image used to run a specific container, such as nginx-1
+docker ps -a --filter "ancestor=ubuntu" --format "{{.Names}}"    ----To find the name of a container created using the ubuntu image
+docker ps -a --filter "ancestor=alpine" --filter "status=exited" --format "{{.ID}}"  ----To find the ID of a container that uses the alpine image and is not running
+docker inspect -f '{{.State.Status}}' 1b430d2f7593               ----To check the state of a stopped alpine container
+docker rm -f $(docker ps -aq)                                    ----delete all containers
+docker rmi -f ubuntu                                             ----delete ubuntu image
+docker pull nginx:1.14-alpine                                    ----to pull the image
+docker run --name webapp -d nginx:1.14-alpine                    ----Run a container with the nginx:1.14-alpine image and name it webapp
+docker rm -f $(docker ps -aq); docker rmi -f $(docker images -q) ----Delete all images on the host Remove containers as necessary
+
+
+
+
+
