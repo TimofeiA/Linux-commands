@@ -1,0 +1,6 @@
+vmstat          ---vmstat tells us everything we need to know about virtual memory. The system starts using virtual memory when it runs out of physical memory---
+vmstat -a       ---check active and inactive memory---
+lsof            ---lsof (or list of open files) is a handy command to quickly see the list of open files and associated processes.---
+tcpdump         ---To debug network issues, or to check traffic of any specific app or service on machines, use the command, tcpdump.---
+iostat          ---iostat is used to monitor such I/O activity on all disks and partitions on a computer. It also provides the CPU utilization for such operations.---
+iotop           ---Just as we would use top for monitoring processes, we can use iotop for monitoring all threads that are performing I/O operations and the bandwidth they consume.---
