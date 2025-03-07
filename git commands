@@ -3,6 +3,9 @@ git config --global user.email "email"
 git config --global --list  ---check what config you have---
 ssh-keygen -t ed25519 -C "email"
 git remote set-url origin "ssh_link_from github"
+git remote add origin https://github.com/TimofeiA/Putra.git
+ssh -vT git@github.com  --check connection--
+git push origin master(main)
 
 
 git init
