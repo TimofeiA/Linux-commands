@@ -6,7 +6,7 @@ git remote set-url origin "ssh_link_from github"
 git remote add origin https://github.com/TimofeiA/Putra.git
 ssh -vT git@github.com  --check connection--
 git push origin master(main)
-
+git remote -v     --check remote repo--
 
 git init
 git status
